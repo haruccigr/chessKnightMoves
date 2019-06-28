@@ -16,7 +16,8 @@
  * This program simulates the Knight Chess moves. Given a starting point and an ending point
  * (both in algebraic chess notation) and a maximum number of moves allowed, finds and prints
  * all the available paths that the knight could take so as to reach the ending point. It uses
- * recursion instead of a loop. The data structure used for storing the active path is a stack.
+ * recursion instead of a loop. The data structure used for storing the active path is a stack
+ * implemented by a single-linked list.
  * 
  * 
  * ******************************** Algorith ********************************

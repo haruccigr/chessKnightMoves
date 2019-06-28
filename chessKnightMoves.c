@@ -16,7 +16,7 @@
  * This program simulates the Knight Chess moves. Given a starting point and an ending point
  * (both in algebraic chess notation) and a maximum number of moves allowed, finds and prints
  * all the available paths that the knight could take so as to reach the ending point. It uses
- * recursion instead of a loop.
+ * recursion instead of a loop. The data structure used for storing the active path is a stack.
  * 
  * 
  * ******************************** Algorith ********************************
@@ -24,7 +24,7 @@
  * 
  * findPaths(source, dest, visited, activeList)
  * 
- *      u <- current node
+ *      u <- pop current node from activeList
  *      for every possible neighbor v of u
  * 
  *          if v is in the chessboard & not visited before
@@ -90,7 +90,7 @@ struct node
     int column;
 };
 
-// the queue node contains a pointer to next item,the data and
+// the list contains a pointer to next item,the data and
 // the number of the current element, i.e. the 1st element has
 // itemCount = 1, the 3rd element itemCount = 3 and so on...
 
@@ -101,7 +101,7 @@ struct list
     int itemCount;
 };
 
-// list to be used so as to implement a stack data structure
+// list to be used so as to implement a Stack data structure
 typedef struct list list;
 typedef struct node graphNode;
 
@@ -681,7 +681,7 @@ int main(int argc, char *argv[])
 
     /* initialize all data needed for the algorithm */
 
-    // init the statck that holds the active path
+    // init the stack that holds the active path
     list *activeList = initStack();
     activeList->data = source;
 
